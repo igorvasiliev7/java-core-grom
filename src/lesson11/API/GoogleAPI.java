@@ -23,7 +23,8 @@ public class GoogleAPI implements API {
                     rooms1[j]=rooms[i]; j++;
         }
 
-        return rooms1;
+        if(j==0) return rooms1;
+        else return null;
     }
 
     @Override
