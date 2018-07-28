@@ -29,11 +29,11 @@ public class ElectronicsOrder extends Order {
 @Override
    public void calculatePrice() {
 
-       double delivery = this.getShipToCity()!=null&&(this.getShipToCity().equals("Киев") || this.getShipToCity().equals("Одесса"))?
+       double delivery = this.getShipToCity()!=null&&(this.getShipToCity().equalsIgnoreCase("Киев") || this.getShipToCity().equalsIgnoreCase("Одесса"))?
            0.1*this.getBasePrice():this.getBasePrice()*0.15;
 
 
-       double bonus =  this.getBasePrice() > 1000? this.getBasePrice()* 0.05:0;
+       double bonus =  this.getBasePrice() > 1000? (this.getBasePrice()+delivery)* 0.05:0;
 
 
 
