@@ -22,7 +22,7 @@ public class FurnitureOrder extends Order {
     public void calculatePrice() {
         Double price = 1.0 * this.getBasePrice();
 
-        if (this.getBasePrice() < 5000) price *= 1.05;
+        if (price < 5000) price *= 1.05;
         else price *= 1.02;
         this.setTotalPrice(price);
     }
