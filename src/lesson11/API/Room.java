@@ -3,7 +3,16 @@ package lesson11.API;
 import java.util.Date;
 
 public class Room {
-  private   long id;
+    public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
+        this.id = id;
+        this.price = price;
+        this.persons = persons;
+        this.dateAvailableFrom = dateAvailableFrom;
+        this.hotelName = hotelName;
+        this.cityName = cityName;
+    }
+
+    private   long id;
    private int price;
    private int persons;
    private Date dateAvailableFrom;
