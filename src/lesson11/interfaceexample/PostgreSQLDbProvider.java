@@ -5,6 +5,11 @@ public class PostgreSQLDbProvider implements DbProvider {
         ;
     }
 
+    @Override
+    public void encryptData() {
+
+    }
+
     public void disconnectFromDb() {
         ;
     }

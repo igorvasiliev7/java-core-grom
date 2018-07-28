@@ -5,6 +5,6 @@ public class Demo {
 
     }
     private static void read(Storage storage, Readable readable){
-        
+
     }
 }
