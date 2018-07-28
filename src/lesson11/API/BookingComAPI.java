@@ -12,7 +12,7 @@ public class BookingComAPI implements API{
     }
 
     @Override
-    public Room[] FindRooms(int price, int persons, String city, String hotel) {
+    public Room[] findRooms(int price, int persons, String city, String hotel) {
 
         return new Room[0];
     }

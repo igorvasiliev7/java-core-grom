@@ -11,7 +11,7 @@ public class GoogleAPI implements API {
     }
 
     @Override
-    public Room[] FindRooms(int price, int persons, String city, String hotel) {
+    public Room[] findRooms(int price, int persons, String city, String hotel) {
         ArrayList<Room> rooms1=new ArrayList<>();
 
         for(Room room:rooms){
