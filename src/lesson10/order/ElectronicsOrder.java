@@ -32,7 +32,7 @@ public class ElectronicsOrder extends Order {
        Double delivery = 1.0 * this.getBasePrice();
 
 
-        if (this.getShipToCity().equals("Киев") || this.getShipToCity().equals("Одесса"))
+        if (this.getShipToCity()!=null&&this.getShipToCity().equals("Киев") || this.getShipToCity().equals("Одесса"))
             delivery *= 0.1;
         else delivery *= 0.15;
 
