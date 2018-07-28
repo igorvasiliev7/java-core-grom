@@ -29,16 +29,16 @@ public class ElectronicsOrder extends Order {
 
    public void calculatePrice() {
         Double price = 1.0 * this.getBasePrice();
-    //   Double delivery = 1.0 * this.getBasePrice();
+       Double delivery = 1.0 * this.getBasePrice();
 
-       if (price > 1000) price *= 0.95;
+
         if (this.getShipToCity().equals("Киев") || this.getShipToCity().equals("Одесса"))
-            price *= 1.1;
-        else price *= 1.15;
+            delivery *= 0.1;
+        else delivery *= 0.15;
 
       //  if (this.getBasePrice() > 1000) price *= 0.95;
+       if (price > 1000) price *= 0.95;
 
-
-        this.setTotalPrice(price);
+        this.setTotalPrice(price+delivery);
     }
 }
