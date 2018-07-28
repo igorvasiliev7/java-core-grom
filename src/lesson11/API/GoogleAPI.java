@@ -1,6 +1,7 @@
 package lesson11.API;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 //GoogleAPI</b> ищет сторого по заданным параметрам
 public class GoogleAPI implements API {
@@ -21,9 +22,10 @@ public class GoogleAPI implements API {
                     rooms[i].getCityName().equalsIgnoreCase(city)&&
             rooms[i].getHotelName().equalsIgnoreCase(hotel))
                     rooms1[j]=rooms[i]; j++;
+                    rooms1[j].setDateAvailableFrom(new Date());
         }
 
-        if(j==0) return rooms1;
+        if(j!=0) return rooms1;
         else return null;
     }
 

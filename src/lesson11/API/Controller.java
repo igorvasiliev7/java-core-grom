@@ -7,8 +7,27 @@ Room[] requestRooms(int price, int persons, String city, String hotel)</b>
 Который используя все реализации интерфейса API, находит комнаты по заданным параметрам
 
 <b style="font-weight:bold;">Room[] check(API api1, API api2)</b>
-Который находит общие комнаты у двух API (в результирующий массив добавлять комнаты с api1). Комнаты будем считать равными, если у них одинаковые все поля кроме id и dateAvailableFrom. Гарантируется что id комнаты уникальный во всей системе
+Который находит общие комнаты у двух API (в результирующий массив добавлять комнаты с api1).
+Комнаты будем считать равными, если у них одинаковые все поля кроме id и dateAvailableFrom.
+Гарантируется что id комнаты уникальный во всей системе
 
  */
 public class Controller {
+    API[] apis;
+
+    public Controller(API[] apis) {
+        this.apis = apis;
+    }
+
+    public Room[] requestRooms(int price, int persons, String city, String hotel){
+        int maxLengthRooms=0;
+        int j=0;
+        for(API api:apis) if(api!=null) maxLengthRooms+=api.getAll().length;
+        Room[] rooms=new Room[maxLengthRooms];
+
+        for(API api:apis)rooms=api.findRooms(price, persons, city, hotel);
+
+        return rooms;
+
+    }
 }
