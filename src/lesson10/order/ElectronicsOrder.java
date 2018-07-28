@@ -33,12 +33,12 @@ public class ElectronicsOrder extends Order {
            0.1*this.getBasePrice():this.getBasePrice()*0.15;
 
 
-       Double price =  this.getBasePrice() > 1000? this.getBasePrice()* 0.95:0;
+       Double bonus =  this.getBasePrice() > 1000? this.getBasePrice()* 0.05:0;
 
 
 
 
 
-        this.setTotalPrice(price+delivery);
+        this.setTotalPrice(getBasePrice()+delivery-bonus);
     }
 }
