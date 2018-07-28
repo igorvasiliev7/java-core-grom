@@ -33,8 +33,8 @@ public class ElectronicsOrder extends Order {
             price *= 1.1;
         else price *= 1.15;
 
-        if (this.getBasePrice() > 1000) price *= 0.95;
-
+      //  if (this.getBasePrice() > 1000) price *= 0.95;
+       if (price > 1000) price *= 0.95;
         this.setTotalPrice(price);
     }
 }
