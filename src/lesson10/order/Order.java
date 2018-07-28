@@ -79,7 +79,7 @@ public abstract class Order {
 
     public abstract void calculatePrice();
 
-    public void confirmShiping() {
+    public void confirmShipping() {
         if (dateShipped != null) dateShipped = new Date();
     }
 }

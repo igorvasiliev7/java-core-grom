@@ -6,15 +6,15 @@ public class ElectronicsOrder extends Order {
     public ElectronicsOrder() {
     }
 
-    public ElectronicsOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, int guarantyMonths) {
+    public ElectronicsOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, int guaranteeMonths) {
         super(itemName, dateCreated, shipFromCity, shipToCity, basePrice, customerOwned);
-        this.guarantyMonths = guarantyMonths;
+        this.guaranteeMonths = guaranteeMonths;
     }
 
-    private int guarantyMonths;
+    private int guaranteeMonths;
 
-    public int getGuarantyMonths() {
-        return guarantyMonths;
+    public int getGuaranteeMonths() {
+        return guaranteeMonths;
     }
 
    public void validateOrder() {
