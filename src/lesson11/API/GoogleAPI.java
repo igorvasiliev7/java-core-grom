@@ -12,17 +12,18 @@ public class GoogleAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        ArrayList<Room> rooms1=new ArrayList<>();
+        Room[] rooms1=new Room[rooms.length];
+        int j=0;
 
-        for(Room room:rooms){
-            if(room!=null)
-                if(room.getPrice()==price&&room.getPersons()==persons&&
-                    room.getCityName().equalsIgnoreCase(city)&&
-            room.getHotelName().equalsIgnoreCase(hotel))
-                    rooms1.add(room);
+        for(int i=0;i<rooms.length;i++){
+            if(rooms[i]!=null)
+                if(rooms[i].getPrice()==price&&rooms[i].getPersons()==persons&&
+                    rooms[i].getCityName().equalsIgnoreCase(city)&&
+            rooms[i].getHotelName().equalsIgnoreCase(hotel))
+                    rooms1[j]=rooms[i]; j++;
         }
 
-        return new Room[0];
+        return rooms1;
     }
 
     @Override
