@@ -1,6 +1,9 @@
 package lesson10.order;
 
 public class Customer {
+    public Customer() {
+    }
+
     private String name;
     private String city;
     private String gender;

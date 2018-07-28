@@ -9,6 +9,11 @@ public abstract class Order {
     private Date dateConfirmed;
     private Date dateShipped;
     private String shipFromCity;
+    private String shipToCity;
+    private int basePrice;
+    private double totalPrice;
+    private Customer customerOwned;
+
 
     public void setDateConfirmed(Date dateConfirmed) {
         this.dateConfirmed = dateConfirmed;
@@ -58,10 +63,6 @@ public abstract class Order {
         return customerOwned;
     }
 
-    private String shipToCity;
-    private int basePrice;
-    private double totalPrice;
-    private Customer customerOwned;
 
     public Order(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned) {
         this.itemName = itemName;
