@@ -3,6 +3,8 @@ package lesson10.order;
 import java.util.Date;
 
 public abstract class Order {
+    public Order() {
+    }
 
     private String itemName;
     private Date dateCreated;
@@ -73,9 +75,9 @@ public abstract class Order {
         this.customerOwned = customerOwned;
     }
 
-    abstract void validateOrder();
+   public abstract void validateOrder();
 
-    abstract void calculatePrice();
+    public abstract void calculatePrice();
 
     public void confirmShiping() {
         if (dateShipped != null) dateShipped = new Date();
