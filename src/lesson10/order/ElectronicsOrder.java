@@ -26,7 +26,7 @@ public class ElectronicsOrder extends Order {
                 (this.getCustomerOwned().getGender().equals("Женский"))) this.setDateConfirmed(new Date());
 
     }
-
+@Override
    public void calculatePrice() {
 
        double delivery = this.getShipToCity()!=null&&this.getShipToCity().equals("Киев") || this.getShipToCity().equals("Одесса")?
