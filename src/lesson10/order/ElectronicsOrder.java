@@ -29,7 +29,7 @@ public class ElectronicsOrder extends Order {
 @Override
    public void calculatePrice() {
 
-       double delivery = this.getShipToCity()!=null&&this.getShipToCity().equals("Киев") || this.getShipToCity().equals("Одесса")?
+       double delivery = this.getShipToCity()!=null&&(this.getShipToCity().equals("Киев") || this.getShipToCity().equals("Одесса"))?
            0.1*this.getBasePrice():this.getBasePrice()*0.15;
 
 
