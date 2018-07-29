@@ -20,9 +20,9 @@ public class GoogleAPI implements API {
             if(rooms[i]!=null)
                 if(rooms[i].getPrice()==price&&rooms[i].getPersons()==persons&&
                     rooms[i].getCityName().equalsIgnoreCase(city)&&
-            rooms[i].getHotelName().equalsIgnoreCase(hotel))
-                    rooms1[j]=rooms[i]; j++;
-                    rooms1[j].setDateAvailableFrom(new Date());
+            rooms[i].getHotelName().equalsIgnoreCase(hotel)){
+                    rooms1[j]=rooms[i];
+                    j++;}
         }
 
         if(j!=0) return rooms1;
