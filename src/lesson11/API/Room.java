@@ -24,12 +24,12 @@ public class Room {
         this.cityName = cityName;
     }
 
-    private   long id;
-   private int price;
-   private int persons;
-   private Date dateAvailableFrom;
-   private String hotelName;
-   private String cityName;
+    private long id;
+    private int price;
+    private int persons;
+    private Date dateAvailableFrom;
+    private String hotelName;
+    private String cityName;
 
     public void setPrice(int price) {
         this.price = price;

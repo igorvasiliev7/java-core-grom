@@ -13,19 +13,21 @@ public class GoogleAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] rooms1=new Room[rooms.length];
-        int j=0;
+        Room[] rooms1 = new Room[rooms.length];
+        int j = 0;
 
-        for(int i=0;i<rooms.length;i++){
-            if(rooms[i]!=null){
-                if(rooms[i].getPrice()==price&&rooms[i].getPersons()==persons&&
-                    rooms[i].getCityName().equalsIgnoreCase(city)&&
-            rooms[i].getHotelName().equalsIgnoreCase(hotel)){
-                    rooms1[j]=rooms[i];
-                    j++;}}
+        for (int i = 0; i < rooms.length; i++) {
+            if (rooms[i] != null) {
+                if (rooms[i].getPrice() == price && rooms[i].getPersons() == persons &&
+                        rooms[i].getCityName().equalsIgnoreCase(city) &&
+                        rooms[i].getHotelName().equalsIgnoreCase(hotel)) {
+                    rooms1[j] = rooms[i];
+                    j++;
+                }
+            }
         }
 
-        if(j!=0) return rooms1;
+        if (j != 0) return rooms1;
         else return null;
     }
 
