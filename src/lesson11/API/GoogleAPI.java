@@ -16,6 +16,7 @@ public class GoogleAPI implements API {
         Room[] rooms1 = new Room[rooms.length];
         int j = 0;
 
+        if(rooms!=null){
         for (int i = 0; i < rooms.length; i++) {
             if (rooms[i] != null) {
                 if (rooms[i].getPrice() == price && rooms[i].getPersons() == persons &&
@@ -25,7 +26,7 @@ public class GoogleAPI implements API {
                     j++;
                 }
             }
-        }
+        }}
 
         if (j != 0) return rooms1;
         else return null;
