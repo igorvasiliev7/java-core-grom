@@ -27,16 +27,28 @@ public class Demo {
         API google=new GoogleAPI(rooms1);
         API trip=new TripAdvisorAPI(rooms2);
         API booking=new BookingComAPI(rooms3);
-
-        Room[] test1 =google.findRooms(23,2,"kiev","C1");
-        if(test1!=null)  for(Room room:test1){ System.out.println(room); } else System.out.println("No such rooms");
-
-        Room[] test2 =trip.findRooms(23,2,"kiev","C1");
-        if(test1!=null)  for(Room room:test2){ System.out.println(room); } else System.out.println("No such rooms");
-
-        Room[] test3 =booking.findRooms(10,2,"kiev","C1");
-        if(test1!=null)  for(Room room:test3){ System.out.println(room); } else System.out.println("No such rooms");
+        API[] apis={google,trip,booking};
+        Controller controller=new Controller(apis);
 
 
+//        Room[] test1 =google.findRooms(23,2,"kiev","C1");
+//        System.out.println("Test1");
+//        if(test1!=null)  for(Room room:test1){ System.out.println(room); } else System.out.println("No such rooms");
+//
+//        Room[] test2 =trip.findRooms(23,2,"kiev","C1");
+//        System.out.println("Test2");
+//        if(test2!=null)  for(Room room:test2){ System.out.println(room); } else System.out.println("No such rooms");
+//
+//        Room[] test3 =booking.findRooms(10,2,"kiev","C1");
+//        System.out.println("Test3");
+//        if(test3!=null)  for(Room room:test3){ System.out.println(room); } else System.out.println("No such rooms");
+//
+//       Room[] test4= controller.check(google,trip);
+//        System.out.println("Test4");
+//        if(test4!=null)  for(Room room:test4){ System.out.println(room); } else System.out.println("No such rooms");
+
+        Room[] test5=controller.requestRooms(23,2,"kiev","C1");
+        System.out.println("Test5");
+        if(test5!=null)  for(Room room:test5){ System.out.println(room); } else System.out.println("No such rooms");
     }
 }

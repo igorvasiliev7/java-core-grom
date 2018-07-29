@@ -17,11 +17,12 @@ public class TripAdvisorAPI implements API {
         int j=0;
 
         for(int i=0;i<rooms.length;i++){
-            if(rooms[i]!=null)
+            if(rooms[i]!=null){
                 if(rooms[i].getPrice()==price&&(rooms[i].getPersons()>=(persons-1)&&rooms[i].getPersons()<=(persons+1))&&
                         rooms[i].getCityName().equalsIgnoreCase(city)&&
-                        rooms[i].getHotelName().equalsIgnoreCase(hotel))
-                    rooms1[j]=rooms[i]; j++;
+                        rooms[i].getHotelName().equalsIgnoreCase(hotel)){
+                    rooms1[j]=rooms[i];
+                    j++;}}
         }
 
         if(j!=0) return rooms1;

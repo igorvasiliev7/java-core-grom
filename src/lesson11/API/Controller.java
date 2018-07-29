@@ -13,25 +13,30 @@ Room[] requestRooms(int price, int persons, String city, String hotel)</b>
 
  */
 public class Controller {
-    API[] apis;
+   private API[] apis;
 
     public Controller(API[] apis) {
         this.apis = apis;
     }
 
     public Room[] requestRooms(int price, int persons, String city, String hotel){
+        if(apis!=null){
+
         int maxLengthRooms=0;
         int j=0;
+
         for(API api:apis) {if(api!=null) maxLengthRooms+=api.getAll().length;}
         Room[] rooms=new Room[maxLengthRooms];
         Room[] roomsChosen;
         for(API api:apis) {
+            if(api!=null){
             roomsChosen = api.findRooms(price, persons, city, hotel);
             if(roomsChosen!=null)for(int i=0;i<roomsChosen.length;i++){
-                if(roomsChosen[i]!=null)rooms[j]=roomsChosen[i];
+                if(roomsChosen[i]!=null){rooms[j]=roomsChosen[i];j++;}
             }
-        }
-        return rooms;
+        }}
+        return rooms;}
+        else return null;
     }
 
    public Room[] check(API api1, API api2) {
