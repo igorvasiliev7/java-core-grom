@@ -1,6 +1,6 @@
 package lesson11.API;
 
-import java.util.Arrays;
+
 import java.util.Date;
 
 public class Demo {
@@ -18,17 +18,17 @@ public class Demo {
         Room room4=new Room(4,23,2,new Date(),"C1","Kiev");
         Room room5=new Room(5,23,3,new Date(),"C1","kiev");
         Room room6=new Room(6,18,2,new Date(),"C1","Kiev");
-        Room room7=new Room(7,19,2,new Date(),"C1","kiev");
+        Room room7=new Room(7,0,2,new Date(),"C1","kiev");
 
         Room[] rooms1={room1,room2,room3,room4,room7};
-        Room[] rooms2={room6,room1,room5,room3,room4};
+        Room[] rooms2={room6,room1,room5,room3,room4,room2};
         Room[] rooms3={room5,room7,room3,room6};
 
         API google=new GoogleAPI(rooms1);
         API trip=new TripAdvisorAPI(rooms2);
         API booking=new BookingComAPI(rooms3);
 
-        Room[] test1 =google.findRooms(10,2,"kiev","C1");
+        Room[] test1 =google.findRooms(23,2,"kiev","C1");
         if(test1!=null)  for(Room room:test1){ System.out.println(room); } else System.out.println("No such rooms");
 
         Room[] test2 =trip.findRooms(23,2,"kiev","C1");

@@ -22,7 +22,7 @@ public class Controller {
     public Room[] requestRooms(int price, int persons, String city, String hotel){
         int maxLengthRooms=0;
         int j=0;
-        for(API api:apis) if(api!=null) maxLengthRooms+=api.getAll().length;
+        for(API api:apis) {if(api!=null) maxLengthRooms+=api.getAll().length;}
         Room[] rooms=new Room[maxLengthRooms];
         Room[] roomsChosen;
         for(API api:apis) {
@@ -34,7 +34,7 @@ public class Controller {
         return rooms;
     }
 
-    Room[] check(API api1, API api2) {
+   public Room[] check(API api1, API api2) {
         Room[] api1Rooms=api1.getAll();
         Room[] api2Rooms=api2.getAll();
 
