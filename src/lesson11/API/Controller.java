@@ -34,7 +34,7 @@ public class Controller {
         return rooms;
     }
 
-   public Room[] check(API api1, API api2) {
+    Room[] check(API api1, API api2) {
         Room[] api1Rooms=api1.getAll();
         Room[] api2Rooms=api2.getAll();
 
