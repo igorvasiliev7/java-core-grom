@@ -14,7 +14,7 @@ public class GoogleAPI implements API {
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
 
-        Room[] rooms1=null;
+        Room[] rooms1=new Room[0];
         int j = 0;
 
        if(rooms!=null){
