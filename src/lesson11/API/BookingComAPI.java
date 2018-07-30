@@ -5,7 +5,7 @@ package lesson11.API;
 ищет комнату с ценой 50 и другими параметрами, BookingComAPI вернет все комнаты с ценой в диапазоне 0 - 150
  */
 public class BookingComAPI implements API {
-    Room[] rooms;
+   private Room[] rooms;
 
     public BookingComAPI(Room[] rooms) {
         this.rooms = rooms;

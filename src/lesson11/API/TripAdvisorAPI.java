@@ -5,7 +5,7 @@ package lesson11.API;
 комнату с ко-вом гостей 3 и другими параметрами, TripAdvisorAPI вернет все комнаты с ко-вом гостей от 2 до четырех
  */
 public class TripAdvisorAPI implements API {
-    Room[] rooms;
+   private Room[] rooms;
 
     public TripAdvisorAPI(Room[] rooms) {
         this.rooms = rooms;

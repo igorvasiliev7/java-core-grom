@@ -5,7 +5,7 @@ import java.util.Date;
 
 //GoogleAPI</b> ищет сторого по заданным параметрам
 public class GoogleAPI implements API {
-    Room[] rooms;
+   private Room[] rooms;
 
     public GoogleAPI(Room[] rooms) {
         this.rooms = rooms;
@@ -13,10 +13,12 @@ public class GoogleAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] rooms1 = new Room[rooms.length];
+
+        Room[] rooms1=null;
         int j = 0;
 
         if(rooms!=null){
+            rooms1= new Room[rooms.length];
         for (int i = 0; i < rooms.length; i++) {
             if (rooms[i] != null) {
                 if (rooms[i].getPrice() == price && rooms[i].getPersons() == persons &&

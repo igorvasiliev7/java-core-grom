@@ -31,9 +31,9 @@ public class Demo {
         Controller controller = new Controller(apis);
 
 
-//        Room[] test1 =google.findRooms(23,2,"kiev","C1");
-//        System.out.println("Test1");
-//        if(test1!=null)  for(Room room:test1){ System.out.println(room); } else System.out.println("No such rooms");
+        Room[] test1 =google.findRooms(23,2,"kiev","C1");
+        System.out.println("Test1");
+        if(test1!=null)  for(Room room:test1){ System.out.println(room); } else System.out.println("No such rooms");
 //
 //        Room[] test2 =trip.findRooms(23,2,"kiev","C1");
 //        System.out.println("Test2");
