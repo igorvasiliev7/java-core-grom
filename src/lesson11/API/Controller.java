@@ -20,7 +20,7 @@ public class Controller {
     }
 
     public Room[] requestRooms(int price, int persons, String city, String hotel) {
-        if (apis != null) {
+
 
             int maxLengthRooms = 0;
             int j = 0;
@@ -42,7 +42,7 @@ public class Controller {
                 }
             }
             return rooms;
-        } else return null;
+
     }
 
     public Room[] check(API api1, API api2) {
@@ -65,8 +65,8 @@ public class Controller {
             }
         }
 
-        if (rooms[0] != null) return rooms;
-        else return null;
+      return rooms;
+
     }
 }
 

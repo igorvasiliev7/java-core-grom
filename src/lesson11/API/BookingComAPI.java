@@ -26,8 +26,8 @@ public class BookingComAPI implements API {
                 }
         }
 
-        if (j != 0) return rooms1;
-        else return null;
+        return rooms1;
+        
     }
 
     @Override
