@@ -14,7 +14,7 @@ public class GoogleAPI implements API {
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
 
-        Room[] rooms1=new Room[1];
+        Room[] rooms1=null;
         int j = 0;
 
        if(rooms.length>0){
@@ -26,7 +26,7 @@ public class GoogleAPI implements API {
                         rooms[i].getHotelName().equalsIgnoreCase(hotel)) {
                     rooms1[j] = rooms[i];
                     j++;
-                }
+                } else rooms1[j]=null;
             }
         }}
 
