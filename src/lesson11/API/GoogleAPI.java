@@ -17,7 +17,7 @@ public class GoogleAPI implements API {
         Room[] rooms1=null;
         int j = 0;
 
-        if(rooms!=null){
+        if(rooms.length>0){
             rooms1= new Room[rooms.length];
         for (int i = 0; i < rooms.length; i++) {
             if (rooms[i] != null) {

@@ -27,7 +27,7 @@ public class BookingComAPI implements API {
         }
 
         return rooms1;
-        
+
     }
 
     @Override
