@@ -31,7 +31,7 @@ public class GoogleAPI implements API {
                 }
             }
         }}
-        
+
          return rooms1;
 
     }

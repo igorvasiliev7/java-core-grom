@@ -1,5 +1,7 @@
 package lesson11.API;
 
+import java.util.Arrays;
+
 /*Controller</b> - класс, который содержит поле API[] apis,инициализируется в
 конструкторе, и два общедоступных метода
 
@@ -20,21 +22,16 @@ public class Controller {
     }
 
     public Room[] requestRooms(int price, int persons, String city, String hotel) {
-
-
-            int maxLengthRooms = 0;
             int j = 0;
 
-            for (API api : apis) {
-                if (api != null) maxLengthRooms += api.getAll().length;
-            }
-            Room[] rooms = new Room[maxLengthRooms];
-            Room[] roomsChosen;
+            Room[] rooms = new Room[0];
+
             for (API api : apis) {
                 if (api != null) {
-                    roomsChosen = api.findRooms(price, persons, city, hotel);
-                    if (roomsChosen != null) for (int i = 0; i < roomsChosen.length; i++) {
+                    Room[]   roomsChosen = api.findRooms(price, persons, city, hotel);
+                    if (roomsChosen.length!=0) for (int i = 0; i < roomsChosen.length; i++) {
                         if (roomsChosen[i] != null) {
+                            rooms = Arrays.copyOf(rooms, rooms.length + 1);
                             rooms[j] = roomsChosen[i];
                             j++;
                         }
@@ -49,7 +46,7 @@ public class Controller {
         Room[] api1Rooms = api1.getAll();
         Room[] api2Rooms = api2.getAll();
 
-        Room[] rooms = new Room[api1Rooms.length];
+        Room[] rooms = new Room[0];
         int g = 0;
 
         for (int i = 0; i < api1.getAll().length; i++) {
@@ -58,6 +55,7 @@ public class Controller {
                         api1Rooms[i].getCityName().equalsIgnoreCase(api2Rooms[j].getCityName()) &&
                         api1Rooms[i].getPersons() == api2Rooms[j].getPersons() &&
                         api1Rooms[i].getPrice() == api2Rooms[j].getPrice()) {
+                    rooms = Arrays.copyOf(rooms, rooms.length + 1);
                     rooms[g] = api1Rooms[i];
                     g++;
                     break;
