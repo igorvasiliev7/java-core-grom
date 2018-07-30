@@ -29,7 +29,7 @@ public class GoogleAPI implements API {
                 }
             }
         }}
-
+            if(j==0)rooms1=new Room[0];
          return rooms1;
 
     }
