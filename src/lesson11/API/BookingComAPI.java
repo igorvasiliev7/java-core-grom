@@ -13,6 +13,7 @@ public class BookingComAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
+
         Room[] rooms1 = new Room[rooms.length];
         int j = 0;
         int min = price < 100 ? 0 : price;
