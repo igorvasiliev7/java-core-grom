@@ -9,6 +9,26 @@ public class User {
     Bank bank;
     String companyName;
 
+    public void setMonthsOfEmployment(int monthsOfEmployment) {
+        this.monthsOfEmployment = monthsOfEmployment;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public void setSalary(int salary) {
+        Salary = salary;
+    }
+
     @Override
     public String toString() {
         return "User{" +
