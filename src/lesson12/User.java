@@ -1,16 +1,26 @@
 package lesson12;
 
 public class User {
-    public User() {
-    }
+//    public User() {
+//    }
 
     private long id;
     private String name;
     private double balance;
     private int monthsOfEmployment;
    private int salary;
-    Bank bank;
-    String companyName;
+   private Bank bank;
+   private String companyName;
+
+    public User(long id, String name, double balance, int monthsOfEmployment, int salary, Bank bank, String companyName) {
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
+        this.monthsOfEmployment = monthsOfEmployment;
+        this.salary = salary;
+        this.bank = bank;
+        this.companyName = companyName;
+    }
 
     public void setBalance(double balance) {
         this.balance = balance;
