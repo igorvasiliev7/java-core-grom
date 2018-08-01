@@ -7,7 +7,7 @@ private Currency currency;
 private int numberOfEmployees;
 private double avrSalaryOfEmployee;
 private long rating;
-private long toyalCapital;
+private long totalCapital;
 
     public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double evrSalaryOfEmployee, long rating, long toyalCapital) {
         this.id = id;
@@ -16,7 +16,7 @@ private long toyalCapital;
         this.numberOfEmployees = numberOfEmployees;
         this.avrSalaryOfEmployee = evrSalaryOfEmployee;
         this.rating = rating;
-        this.toyalCapital = toyalCapital;
+        this.totalCapital = toyalCapital;
     }
 
     public long getId() {
@@ -67,12 +67,12 @@ private long toyalCapital;
         this.rating = rating;
     }
 
-    public long getToyalCapital() {
-        return toyalCapital;
+    public long getTotalCapital() {
+        return totalCapital;
     }
 
-    public void setToyalCapital(long toyalCapital) {
-        this.toyalCapital = toyalCapital;
+    public void setTotalCapital(long totalCapital) {
+        this.totalCapital = totalCapital;
     }
 
    public abstract int getLimitOfWithdrawal();
