@@ -12,7 +12,7 @@ public class User {
    private Bank bank;
    private String companyName;
 
-    public User(long id, String name, double balance, int monthsOfEmployment, int salary, Bank bank, String companyName) {
+    public User(long id, String name, double balance, int monthsOfEmployment, String companyName,int salary, Bank bank ) {
         this.id = id;
         this.name = name;
         this.balance = balance;
