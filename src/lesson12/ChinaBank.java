@@ -7,7 +7,8 @@ public class ChinaBank extends Bank {
 
     @Override
     public int getLimitOfWithdrawal() {
-        return 0;
+        if(getCurrency()==Currency.USD) return 1000;
+        return 1200;
     }
 
     @Override
