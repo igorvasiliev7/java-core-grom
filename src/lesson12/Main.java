@@ -6,7 +6,7 @@ public class Main {
          User user = new User(1000, "Ringo", 12200, 40, 1500, usbank, "GMD");
 
          BankSystem bankSystem=new UkrainianBankSystem();
-         bankSystem.withDraw(user,150);
+         bankSystem.withdraw(user,150);
 
         System.out.println(user.getBalance());
     }

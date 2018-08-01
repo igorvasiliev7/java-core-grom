@@ -21,7 +21,7 @@ public class ChinaBank extends Bank {
     }
 
     @Override
-    public double getComission(int amount) {
+    public double getCommission(int amount) {
         return 0;
     }
 }

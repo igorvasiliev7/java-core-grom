@@ -3,9 +3,9 @@ package lesson12;
 public class UkrainianBankSystem implements BankSystem
 {
     @Override
-    public void withDraw(User user, int amount) {
+    public void withdraw(User user, int amount) {
         if(!checkWithdraw(user, amount)) return;
-       user.setBalance(user.getBalance()-amount-amount*user.getBank().getComission(amount));
+       user.setBalance(user.getBalance()-amount-amount*user.getBank().getCommission(amount));
     }
 
 
@@ -25,7 +25,7 @@ public class UkrainianBankSystem implements BankSystem
 
         if(!checkWithdraw(fromUser, amount)) return;
 //TODO check fund
-       fromUser.setBalance(fromUser.getBalance()-amount-amount*fromUser.getBank().getComission(amount));
+       fromUser.setBalance(fromUser.getBalance()-amount-amount*fromUser.getBank().getCommission(amount));
         //TODO withdraw & fund
     }
 
@@ -35,7 +35,7 @@ public class UkrainianBankSystem implements BankSystem
     }
 
     private boolean checkWithdrawLitim(User user, int amount, double limit){
-    if(amount+user.getBank().getComission(amount)>limit)
+    if(amount+user.getBank().getCommission(amount)>limit)
     { printWithdrawalErrorMsg(amount, user); return false;}
     return true;
 }
