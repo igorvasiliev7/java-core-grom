@@ -45,7 +45,7 @@ public class User {
                 '}';
     }
 
-    public User(long id, String name, double balance, int monthsOfEmployment, int salary, Bank bank, String companyName) {
+    public User(long id, String name, double balance, int monthsOfEmployment, int salary,  String companyName, Bank bank) {
         this.id = id;
         this.name = name;
         this.balance = balance;
