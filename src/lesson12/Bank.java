@@ -1,13 +1,13 @@
 package lesson12;
 
 public abstract class Bank {
-private long id;
-private String bankCountry;
-private Currency currency;
-private int numberOfEmployees;
-private double avrSalaryOfEmployee;
-private long rating;
-private long totalCapital;
+    private long id;
+    private String bankCountry;
+    private Currency currency;
+    private int numberOfEmployees;
+    private double avrSalaryOfEmployee;
+    private long rating;
+    private long totalCapital;
 
     public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double evrSalaryOfEmployee, long rating, long toyalCapital) {
         this.id = id;
@@ -75,12 +75,16 @@ private long totalCapital;
         this.totalCapital = totalCapital;
     }
 
-   public abstract int getLimitOfWithdrawal();
-   public abstract int getLimitOfFunding();
-   public abstract double getMonthlyRate();
-   public abstract double getCommission(int amount);
-   public double moneyPaidMonthlyForSalary(){
-       return numberOfEmployees *avrSalaryOfEmployee;
+    public abstract int getLimitOfWithdrawal();
+
+    public abstract int getLimitOfFunding();
+
+    public abstract double getMonthlyRate();
+
+    public abstract double getCommission(int amount);
+
+    public double moneyPaidMonthlyForSalary() {
+        return numberOfEmployees * avrSalaryOfEmployee;
 
     }
 

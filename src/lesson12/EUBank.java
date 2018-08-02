@@ -7,29 +7,30 @@ public class EUBank extends Bank {
 
     @Override
     public int getLimitOfWithdrawal() {
-        if(getCurrency()==Currency.USD) return 2000;
+        if (getCurrency() == Currency.USD) return 2000;
         return 2200;
 
     }
 
     @Override
     public int getLimitOfFunding() {
-        if(getCurrency()==Currency.EUR) return 20000;
+        if (getCurrency() == Currency.EUR) return 20000;
         return 10000;
     }
 
     @Override
     public double getMonthlyRate() {
-        if(getCurrency()==Currency.EUR) return 0.01;
+        if (getCurrency() == Currency.EUR) return 0.01;
         return 0.0;
     }
 
     @Override
     public double getCommission(int amount) {
-        if(getCurrency()==Currency.USD) {if(amount<=1000) return amount*0.05;
-        else return amount*0.07;}
-        else if(amount<=1000) return amount*0.02;
-        else return amount*0.04;
+        if (getCurrency() == Currency.USD) {
+            if (amount <= 1000) return amount * 0.05;
+            else return amount * 0.07;
+        } else if (amount <= 1000) return amount * 0.02;
+        else return amount * 0.04;
 
 
     }

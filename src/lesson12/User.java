@@ -8,11 +8,11 @@ public class User {
     private String name;
     private double balance;
     private int monthsOfEmployment;
-   private int salary;
-   private Bank bank;
-   private String companyName;
+    private int salary;
+    private Bank bank;
+    private String companyName;
 
-    public User(long id, String name, double balance, int monthsOfEmployment, String companyName,int salary, Bank bank ) {
+    public User(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
         this.id = id;
         this.name = name;
         this.balance = balance;
@@ -55,7 +55,7 @@ public class User {
                 '}';
     }
 
-    public User(long id, String name, double balance, int monthsOfEmployment, int salary,  String companyName, Bank bank) {
+    public User(long id, String name, double balance, int monthsOfEmployment, int salary, String companyName, Bank bank) {
         this.id = id;
         this.name = name;
         this.balance = balance;
