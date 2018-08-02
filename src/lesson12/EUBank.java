@@ -5,14 +5,14 @@ public class EUBank extends Bank {
         super(id, bankCountry, currency, numberOjEmployees, evrSalaryOfEmployee, rating, toyalCapital);
     }
     @Override
-    public double getCommission(int amount) {
+    double getCommission(int amount) {
         if (getCurrency() == Currency.USD) {
             if (amount <= 1000) return amount * 0.05;
             else return amount * 0.07;
         } else if (amount <= 1000) return amount * 0.02;
         else return amount * 0.04;
     }
-    
+
     @Override
     public int getLimitOfWithdrawal() {
         if (getCurrency() == Currency.USD) return 2000;
