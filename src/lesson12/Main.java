@@ -11,7 +11,7 @@ public class Main {
          BankSystem bankSystem=new UkrainianBankSystem();
      //    bankSystem.withdraw(user,150);
       //  bankSystem.fund(user,11000);
-        bankSystem.transferMoney(user,user2, 150);
+       // bankSystem.transferMoney(user,user2, 150);
 
         System.out.println(user.getBalance());
         System.out.println(user2.getBalance());
