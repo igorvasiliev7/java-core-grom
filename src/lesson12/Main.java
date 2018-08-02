@@ -10,7 +10,7 @@ public class Main {
 
         BankSystem bankSystem = new UkrainianBankSystem();
         //bankSystem.fund(user,11000);
-      //  bankSystem.withdraw(user,11000);
+     //  bankSystem.withdraw(user,1100);
 
         bankSystem.transferMoney(user,user2, 5000);
 
