@@ -10,7 +10,7 @@ public class UkrainianBankSystem implements BankSystem {
     @Override
     public void fund(User user, int amount) {
         if (checkLimitOfFunding(user, amount))
-            user.setBalance(user.getBalance() + amount * (1 + user.getBank().getMonthlyRate()));
+            user.setBalance(user.getBalance() + amount +(amount*user.getBank().getMonthlyRate()));
 //TODO
     }
 
