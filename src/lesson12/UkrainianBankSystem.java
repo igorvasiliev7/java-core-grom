@@ -28,9 +28,7 @@ public class UkrainianBankSystem implements BankSystem {
 
     @Override
     public void paySalary(User user) {
-        if (checkLimitOfFunding(user, user.getSalary() * user.getMonthsOfEmployment()))
-            user.setBalance(user.getBalance() + user.getSalary() * user.getMonthsOfEmployment()
-                    + (user.getSalary() * user.getMonthsOfEmployment() * user.getBank().getMonthlyRate()));
+     fund(user, user.getSalary());
 
 //TODO
     }
