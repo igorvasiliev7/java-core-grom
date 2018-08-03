@@ -18,7 +18,7 @@ public class UkrainianBankSystem implements BankSystem {
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
         //TODO check fund & withdraw
-        if (!checkWithdraw(fromUser, amount) || !checkLimitOfFunding(toUser, amount)) return;
+        if (!checkWithdraw(fromUser, amount) || !checkLimitOfFunding(toUser, amount)||!checkCurrencies(fromUser,toUser)) return;
 
 
         fromUser.setBalance(fromUser.getBalance() - amount - amount * fromUser.getBank().getCommission(amount));
@@ -50,13 +50,20 @@ public class UkrainianBankSystem implements BankSystem {
         return true;
     }
 
-
+private boolean checkCurrencies(User user1, User user2){
+        if(user1.getBank().getCurrency()==user2.getBank().getCurrency()) return true;
+        printDifferentCurrenciesMsg(user1, user2);
+        return false;
+}
     private boolean checkWithdraw(User user, int amount) {
         return checkWithdrawLimit(user, amount, user.getBank().getLimitOfWithdrawal()) &&
                 checkWithdrawLimit(user, amount, user.getBalance());
 
     }
 
+    private void printDifferentCurrenciesMsg(User user1, User user2) {
+        System.out.println("Different currencies ["+ user1+ "= ["+ user1.getBank().getCurrency()+", " + user2 + "= "+ user2.getBank().getCurrency());
+    }
     private void printWithdrawalErrorMsg(User user, int amount) {
         System.out.println("Can`t withdraw amount = [" + amount + "], user = [" + user + "]");
     }
