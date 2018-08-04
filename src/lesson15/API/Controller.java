@@ -45,8 +45,7 @@ public class Controller {
     public Room[] check(API api1, API api2) {
         Room[] api1Rooms = api1.getAll();
         Room[] api2Rooms = api2.getAll();
-
-        Room[] rooms = new Room[0];
+      Room[] rooms = new Room[0];
         int g = 0;
 
         for (int i = 0; i < api1.getAll().length; i++) {

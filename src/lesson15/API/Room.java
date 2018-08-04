@@ -3,6 +3,7 @@ package lesson15.API;
 import java.util.Date;
 
 public class Room {
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -10,7 +11,6 @@ public class Room {
 
         Room room = (Room) o;
 
-        if (id != room.id) return false;
         if (price != room.price) return false;
         if (persons != room.persons) return false;
         if (!hotelName.equals(room.hotelName)) return false;
@@ -19,8 +19,7 @@ public class Room {
 
     @Override
     public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + price;
+        int result = price;
         result = 31 * result + persons;
         result = 31 * result + hotelName.hashCode();
         result = 31 * result + cityName.hashCode();
