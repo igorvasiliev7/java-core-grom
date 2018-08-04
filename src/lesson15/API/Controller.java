@@ -22,23 +22,23 @@ public class Controller {
     }
 
     public Room[] requestRooms(int price, int persons, String city, String hotel) {
-            int j = 0;
+        int j = 0;
 
-            Room[] rooms = new Room[0];
+        Room[] rooms = new Room[0];
 
-            for (API api : apis) {
-                if (api != null) {
-                    Room[]   roomsChosen = api.findRooms(price, persons, city, hotel);
-                    if (roomsChosen.length!=0) for (int i = 0; i < roomsChosen.length; i++) {
-                        if (roomsChosen[i] != null) {
-                            rooms = Arrays.copyOf(rooms, rooms.length + 1);
-                            rooms[j] = roomsChosen[i];
-                            j++;
-                        }
+        for (API api : apis) {
+            if (api != null) {
+                Room[] roomsChosen = api.findRooms(price, persons, city, hotel);
+                if (roomsChosen.length != 0) for (int i = 0; i < roomsChosen.length; i++) {
+                    if (roomsChosen[i] != null) {
+                        rooms = Arrays.copyOf(rooms, rooms.length + 1);
+                        rooms[j] = roomsChosen[i];
+                        j++;
                     }
                 }
             }
-            return rooms;
+        }
+        return rooms;
 
     }
 
@@ -61,7 +61,7 @@ public class Controller {
             }
         }
 
-      return rooms;
+        return rooms;
 
     }
 }
