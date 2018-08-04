@@ -51,10 +51,8 @@ public class Controller {
 
         for (int i = 0; i < api1.getAll().length; i++) {
             for (int j = 0; j < api2.getAll().length; j++) {
-                if (api1Rooms[i].getHotelName().equalsIgnoreCase(api2Rooms[j].getHotelName()) &&
-                        api1Rooms[i].getCityName().equalsIgnoreCase(api2Rooms[j].getCityName()) &&
-                        api1Rooms[i].getPersons() == api2Rooms[j].getPersons() &&
-                        api1Rooms[i].getPrice() == api2Rooms[j].getPrice()) {
+                //TODO
+                if (api1Rooms[i].equals(api2Rooms[j])) {
                     rooms = Arrays.copyOf(rooms, rooms.length + 1);
                     rooms[g] = api1Rooms[i];
                     g++;
