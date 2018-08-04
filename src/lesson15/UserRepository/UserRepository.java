@@ -35,15 +35,27 @@ public class UserRepository {
         return null;
     }
 
+
     public User update(User user) {
+        long id;
+        User userFind = findById(user.getId());
         if (user == null) return null;
-        if (findUser(user) == null) return null;
+        if (userFind == null) return null;
 
         for (int i = 0; i < users.length; i++) {
-            if (users[i] != null) if (users[i].equals(user)) {
+            if (users[i] != null) if (users[i].getId() == userFind.getId()) {
                 users[i] = user;
                 return users[i];
             }
+        }
+
+        return null;
+    }
+
+    public User findById(long id) {
+        //User user = null;
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] != null) if (users[i].getId() == id) return users[i];
         }
 
         return null;

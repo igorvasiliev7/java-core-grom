@@ -16,16 +16,22 @@ public class Demo {
         UserRepository userRepository=new UserRepository(users);
         System.out.println(Arrays.toString(userRepository.getUsers()));
         //Save
-        //add
-        //if null
-        //if full
-        // if User is already exist
+        //add+
+        //if null+
+        //if full+
+        // if User is already exist+
         System.out.println(userRepository.save(user1));
         System.out.println(userRepository.save(user2));
         System.out.println(userRepository.save(user3));
         System.out.println(userRepository.save(user4));
         System.out.println(userRepository.save(user5));
-       System.out.println(userRepository.save(user6));
+        //Update
+        //update
+        //if user=null
+        //if no such user
+
+
+       System.out.println(userRepository.update(user4));
         System.out.println(Arrays.toString(userRepository.getUsers()));
 
     }
