@@ -1,6 +1,7 @@
 package lesson15.API;
 
 import java.util.Arrays;
+import java.util.Date;
 
 /*Controller</b> - класс, который содержит поле API[] apis,инициализируется в
 конструкторе, и два общедоступных метода
@@ -22,15 +23,17 @@ public class Controller {
     }
 
     public Room[] requestRooms(int price, int persons, String city, String hotel) {
+        Room room = new Room(1, price, persons, new Date(), city, hotel);
         int j = 0;
 
         Room[] rooms = new Room[0];
 
         for (API api : apis) {
             if (api != null) {
-                Room[] roomsChosen = api.findRooms(price, persons, city, hotel);
+                Room[] roomsChosen = api.getAll();
+
                 if (roomsChosen.length != 0) for (int i = 0; i < roomsChosen.length; i++) {
-                    if (roomsChosen[i] != null) {
+                    if (roomsChosen[i] != null && roomsChosen.equals(room)) {
                         rooms = Arrays.copyOf(rooms, rooms.length + 1);
                         rooms[j] = roomsChosen[i];
                         j++;
@@ -45,7 +48,7 @@ public class Controller {
     public Room[] check(API api1, API api2) {
         Room[] api1Rooms = api1.getAll();
         Room[] api2Rooms = api2.getAll();
-      Room[] rooms = new Room[0];
+        Room[] rooms = new Room[0];
         int g = 0;
 
         for (int i = 0; i < api1.getAll().length; i++) {
