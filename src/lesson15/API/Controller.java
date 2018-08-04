@@ -22,8 +22,8 @@ public class Controller {
         this.apis = apis;
     }
 
-    public Room[] requestRooms(int price, int persons, String city, String hotel) {
-        Room room = new Room(1, price, persons, new Date(), city, hotel);
+    public Room[] requestRooms(int price, int persons, String hotel, String city) {
+        Room room = new Room(1, price, persons, new Date(), hotel, city);
         int j = 0;
 
         Room[] rooms = new Room[0];
@@ -33,7 +33,8 @@ public class Controller {
                 Room[] roomsChosen = api.getAll();
 
                 if (roomsChosen.length != 0) for (int i = 0; i < roomsChosen.length; i++) {
-                    if (roomsChosen[i] != null && roomsChosen.equals(room)) {
+                    System.out.println(roomsChosen[i].equals(room));
+                    if (roomsChosen[i].equals(room)) {
                         rooms = Arrays.copyOf(rooms, rooms.length + 1);
                         rooms[j] = roomsChosen[i];
                         j++;
