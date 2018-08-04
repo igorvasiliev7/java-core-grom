@@ -6,7 +6,7 @@ public class Demo {
         File file2 = new File(11, "d:/", "jpg");
         File file3 = new File(11, "c:/", "doc");
 
-        File somefile = file1;
+        File someFile = file1;
 
         System.out.println(file1.equals(file2));
 
@@ -14,9 +14,9 @@ public class Demo {
         System.out.println(file1.hashCode());
         System.out.println(file3.hashCode());
         System.out.println(file1 == file3);
-        System.out.println(file1.equals(somefile));
+        System.out.println(file1.equals(someFile));
 
-        User user = new User();
+        User user = new User(1001);
 
         System.out.println(file1.equals(user));
     }
