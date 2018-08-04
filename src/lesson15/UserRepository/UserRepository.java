@@ -11,18 +11,18 @@ public class UserRepository {
         return users;
     }
 
-    public boolean findUser(User user) {
+    public User findUser(User user) {
         //User user = null;
         for (int i = 0; i < users.length; i++) {
-            if (users[i] != null&&user!=null) if (users[i].equals(user)) return true;
+            if (users[i] != null&&user!=null) if (users[i].equals(user)) return users[i];
         }
 
-        return false;
+        return null;
     }
 
     public User save(User user) {
         if (user == null) return null;
-        if (findUser(user)) return null;
+        if (findUser(user)==null) return null;
 
         for (int i = 0; i < users.length; i++) {
             if (users[i] == null) {
@@ -37,16 +37,16 @@ public class UserRepository {
 
     public User update(User user) {
         if (user == null) return null;
-        if (!findUser(user)) return null;
+        if (findUser(user)==null) return null;
 
         for (int i = 0; i < users.length; i++) {
-            if (users[i] != null) if (users[i].getId() == user.getId()) {
+            if (users[i] != null) if (users[i].equals(user)) {
                     users[i] = user;
                 return users[i];
             }
         }
 
-        return null;
+      return null;
     }
 
     public void delete(long id) {
