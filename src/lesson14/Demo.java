@@ -18,5 +18,7 @@ public class Demo
         System.out.println(objectTest.getClass().getName());
         System.out.println(objectTest.toString());
 
+        Object test=new Object();
+        Object test2=new Object();
     }
 }
