@@ -13,13 +13,13 @@ public class Demo {
 
     public static void main(String[] args) {
 
-        Room room1 = new Room(1, 23, 2, new Date(), "C1", "Kiev");
-        Room room2 = new Room(2, 23, 1, new Date(), "C1", "kiev");
-        Room room3 = new Room(3, 23, 2, new Date(), "C1", "Kiev");
-        Room room4 = new Room(4, 23, 2, new Date(), "C1", "Kiev");
-        Room room5 = new Room(5, 23, 32, new Date(), "C1", "kiev");
-        Room room6 = new Room(6, 18, 2, new Date(), "C1", "Kiev");
-        Room room7 = new Room(7, 23, 32, new Date(), "C1", "kiev");
+        Room room1 = new Room(1, 23, 2, new Date(), "Kiev", "C1");
+        Room room2 = new Room(2, 23, 1, new Date(), "London", "C1");
+        Room room3 = new Room(3, 23, 2, new Date(), "London", "C1");
+        Room room4 = new Room(4, 23, 2, new Date(), "Paris", "C1");
+        Room room5 = new Room(5, 23, 32, new Date(), "London", "C1");
+        Room room6 = new Room(6, 18, 2, new Date(), "Paris", "C1");
+        Room room7 = new Room(7, 23, 32, new Date(), "Kiev", "C1");
 
         Room[] rooms1 = {room1, room2, room3, room4, room7};
         Room[] rooms2 = {room6, room1, room5, room3, room4, room2};
@@ -32,26 +32,39 @@ public class Demo {
         API[] apis = {google, trip, booking};
         Controller controller = new Controller(apis);
 
+//Test Google findRooms
+        //result+
+        //transfer null+
+        Room[] test1 =google.findRooms(23,2,null,null);
+        System.out.println("Test1");
+       System.out.println(Arrays.toString(test1));
 
-//        Room[] test1 =google.findRooms(23,2,"kiev","C1");
-//        System.out.println("Test1");
-//        if(test1!=null)  for(Room room:test1){ System.out.println(room); } else System.out.println("No such rooms");
-////
-//        Room[] test2 =trip.findRooms(23,2,"kiev","C1");
-//        System.out.println("Test2");
-//        if(test2!=null)  for(Room room:test2){ System.out.println(room); } else System.out.println("No such rooms");
-//
-//        Room[] test3 =booking.findRooms(10,2,"kiev","C1");
-//        System.out.println("Test3");
-//        if(test3!=null)  for(Room room:test3){ System.out.println(room); } else System.out.println("No such rooms");
-//
-//       Room[] test4= controller.check(google,trip);
-//        System.out.println("Test4");
-//        if(test4!=null)  for(Room room:test4){ System.out.println(room); } else System.out.println("No such rooms");
+        //Test2 TripAdvisorApi
+    //  result+
+    //    transfer null+
+        Room[] test2 =trip.findRooms(18,2,"Paris","C1");
+        System.out.println("Test2");
+      System.out.println(Arrays.toString(test2));
 
-         ;
+        //Test3 BookingComApi
+    // //result+
+       // transfer null+
+        Room[] test3 =booking.findRooms(10,2,"null","null");
+        System.out.println("Test3");
+        if(test3!=null)  System.out.println(Arrays.toString(test3));
+
+        //result+
+        //transfer one or both nulls
+
+       Room[] test4= controller.check(google,trip);
+        System.out.println("Test4");
+        System.out.println(Arrays.toString(test4));
+
+        //result+
+        //transfer one or both nulls+
         System.out.println("Test5");
-        System.out.println(Arrays.toString(controller.requestRooms(23, 2, "C1", "Kiev")));
-        //System.out.println("No such rooms");
+        Room[] test5=controller.requestRooms(23, 2, "Kiev", "C1");
+        System.out.println(Arrays.toString(test5));
+
 
 }}

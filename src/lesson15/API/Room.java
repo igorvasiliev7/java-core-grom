@@ -38,7 +38,7 @@ public class Room {
                 '}';
     }
 
-    public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
+    public Room(long id, int price, int persons, Date dateAvailableFrom,  String cityName, String hotelName) {
         this.id = id;
         this.price = price;
         this.persons = persons;

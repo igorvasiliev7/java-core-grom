@@ -28,7 +28,7 @@ public class TripAdvisorAPI implements API {
                     j++;
                 }
             }
-        }
+    }
 
         return rooms1;
 

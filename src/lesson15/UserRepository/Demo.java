@@ -26,12 +26,12 @@ public class Demo {
         System.out.println(userRepository.save(user4));
         System.out.println(userRepository.save(user5));
         //Update
-        //update
-        //if user=null
-        //if no such user
+        //update+
+        //if user=null+
+        //if no such user+
 
 
-       System.out.println(userRepository.update(user4));
+       System.out.println(userRepository.update(user6));
         System.out.println(Arrays.toString(userRepository.getUsers()));
 
     }
